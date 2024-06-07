@@ -1,1 +1,219 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  /* Font */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Font sizes*/
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1.125rem; /* 18px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-xxl: 2rem; /* 32px */
+  /* Font weight and line height */
+  --line-height-base: 1.5;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  /* Colors */
+  /* Primary colors */
+  --color-primary-light: #007bff;
+  --color-primary-dark: #0056b3;
+  /* Secondary colors */
+  --color-secondary: #6c757d;
+  /* Accent colors */
+  --color-accent: #28a745;
+  /* Background colors */
+  --color-background-dark: #343a40;
+  --color-background-light: #f8f9fa;
+  /* Text colors */
+  --color-text-dark: #212529;
+  --color-text-light: #fff;
+  --color-text-red: #bf0b24;
+}
+
+/* Responsive Typography */
+@media (min-width: 576px) {
+  :root {
+    --font-size-sm: 1rem; /* 16px */
+    --font-size-base: 1.125rem; /* 18px */
+    --font-size-md: 1.25rem; /* 20px */
+    --font-size-lg: 1.5rem; /* 24px */
+    --font-size-xl: 1.75rem; /* 28px */
+    --font-size-xxl: 2.25rem; /* 36px */
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-sm: 0.75rem; /* 12px */
+    --font-size-base: 0.875rem; /* 14px */
+    --font-size-md: 1.5rem; /* 24px */
+    --font-size-lg: 1.75rem; /* 28px */
+    --font-size-xl: 2rem; /* 32px */
+    --font-size-xxl: 2.5rem; /* 40px */
+  }
+}
+
+:root {
+  --indention-size-base: 1rem; /* 16px */
+  --indention-size-sm: 0.275rem; /* 14px */
+  --indention-size-md: 1.125rem; /* 18px */
+  --indention-size-lg: 1.25rem; /* 20px */
+  --indention-size-xl: 1.5rem; /* 24px */
+  --indention-size-xxl: 2rem; /* 32px */
+}
+
+/* Base styles */
+body, input, textarea, select {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-weight: var(--font-weight-normal);
+  margin: 0;
+  padding: var(--indention-size-base);
+  color: var(--color-text-dark);
+}
+
+h1, .h1 {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+}
+
+h2, .h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h3, .h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+h4, .h4 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}
+
+h5, .h5 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+
+h6, .h6 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+small, .text-small {
+  font-size: var(--font-size-sm);
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 0 0 1.5em;
+  padding: 0.5em 1em;
+  color: #555;
+  border-left: 0.25em solid #ddd;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0 0 1.5em 1.5em;
+}
+
+/* Code */
+code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  background-color: #f8f9fa;
+  padding: 0.2em 0.4em;
+  font-size: 0.875em;
+}
+
+pre {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  background-color: #f8f9fa;
+  padding: 1em;
+  overflow: auto;
+}
+
+/* Forms */
+label, .label {
+  color: var(--color-text-dark);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indention-size-sm);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+
+label output.error, .label-output-error {
+  color: var(--color-text-red);
+  font-size: var(--font-size-sm);
+}
+
+/* Input styles */
+input {
+  border: none;
+  border-bottom: 1px solid;
+  border-color: var(--color-secondary);
+  outline: none;
+  padding: 0 0 var(--indention-size-sm);
+  position: relative;
+  width: 100%;
+}
+
+app-input {
+  position: relative;
+  display: inline-block; /* Ensure the element respects its content width */
+  width: 100%; /* Make sure it spans the full width of the container */
+}
+
+/* Base input styles */
+app-input input {
+  border: none;
+  border-bottom: 1px solid var(--color-secondary); /* Combine border and border-color for brevity */
+  outline: none;
+  padding: 0 0 var(--indention-size-sm);
+  width: 100%;
+}
+
+/* Pseudo-elements for border animation */
+app-input::before,
+app-input::after {
+  content: ''; /* Add content to enable pseudo-elements */
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-secondary); /* Default border color */
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+/* Animation on focus */
+app-input:focus-within::before,
+app-input:focus-within::after {
+  width: 100%; /* Expand the pseudo-elements on focus */
+}
+
+/* Positioning of pseudo-elements */
+app-input::before {
+  left: 0;
+}
+
+app-input::after {
+  right: 0;
+}
