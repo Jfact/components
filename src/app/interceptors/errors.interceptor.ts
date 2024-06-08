@@ -25,8 +25,6 @@ export interface ErrorIntercepted {
 
 @Injectable()
 export class ErrorsInterceptor implements HttpInterceptor {
-		// private readonly errorsIntercepted: ErrorIntercepted[] = [];
-
 		intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 				return next.handle(req).pipe(
 						catchError((error: any) => {
@@ -66,9 +64,4 @@ export class ErrorsInterceptor implements HttpInterceptor {
 				};
 				errorAdd(errorIntercepted);
 		}
-
-		// private addError(errorIntercepted: ErrorIntercepted): void {
-		// 		errorsIntercepted.push(errorIntercepted);
-		// 		errorsInterceptedChange$.next(errorsIntercepted);
-		// }
 }
