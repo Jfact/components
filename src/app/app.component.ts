@@ -10,7 +10,6 @@ import { PreferencesModel } from './models/preferences.model';
 import { SecurityModel } from './models/security.model';
 import { SocialsModel } from './models/socials.model';
 import { DatabaseService } from './services/database.service';
-import { ErrorsHandlerService } from './services/errors-handler.service';
 import { NotificationService } from './services/notification.service';
 
 @Component({
@@ -29,7 +28,6 @@ import { NotificationService } from './services/notification.service';
 export class AppComponent {
   title = 'components-v1';
   constructor(
-      private errorsHandlerService: ErrorsHandlerService,
       private notificationService: NotificationService,
       private userDatabaseService: DatabaseService<UserModel, 'user'>,
       private usersDatabaseService: DatabaseService<Array<UserModel>, 'user'>,
