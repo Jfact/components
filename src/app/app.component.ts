@@ -44,10 +44,5 @@ export class AppComponent {
     console.log({securityDatabaseService});
     console.log({socialsDatabaseService});
     userDatabaseService.request('GET', 'user').subscribe();
-    errorsHandlerService.errorRaised.subscribe((errors) => {
-      const error = errors[errors.length-1];
-      if (error)
-        notificationService.showHttpError(error.statusCode)
-    })
   }
 }
